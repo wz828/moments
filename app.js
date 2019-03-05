@@ -100,7 +100,7 @@ function likesHtmlTpl(likes) {
   // 遍历生成
   let len = likes.length;
   for (let i = 0; i < len; i++) {
-    likesHtmlArr.push('<a class="reply-who" href="#">' + likes[i] + '</a>');
+    likesHtmlArr.push('<a class="reply-who">' + likes[i] + '</a>');
   }
   // 每个点赞人以逗号加一个空格来相隔
   var likesHtmlText = likesHtmlArr.join(', ');
@@ -121,7 +121,7 @@ function commentsHtmlTpl(comments) {
   let len = comments.length;
   for (let i = 0; i < len; i++) {
     let comment = comments[i];
-    htmlText.push('<div class="comment-item"><a class="reply-who" href="#">' + comment.author + '</a>：' + comment.text + '</div>');
+    htmlText.push('<div class="comment-item"><a class="reply-who">' + comment.author + '</a>：' + comment.text + '</div>');
   }
   htmlText.push('</div>');
   return htmlText.join('');
@@ -213,13 +213,13 @@ function messageTpl(messageData) {
   var htmlText = [];
   htmlText.push('<div class="moments-item" data-index="0">');
   // 消息用户头像
-  htmlText.push('<a class="item-left" href="#">');
+  htmlText.push('<a class="item-left" >');
   htmlText.push('<img src="' + user.avatar + '" width="42" height="42" alt=""/>');
   htmlText.push('</a>');
   // 消息右边内容
   htmlText.push('<div class="item-right">');
   // 消息内容-用户名称
-  htmlText.push('<a href="#" class="item-name">' + user.name + '</a>');
+  htmlText.push('<a class="item-name">' + user.name + '</a>');
   // 消息内容-文本信息
   htmlText.push('<p class="item-msg">' + content.text + '</p>');
   // 消息内容-图片列表 
